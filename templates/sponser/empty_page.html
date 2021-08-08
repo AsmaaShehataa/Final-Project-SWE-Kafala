@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ {% include "public/header.html" %}
+   <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <!-- Start Switcher -->
+
+      <!-- end demo_changer -->
+      <!-- Preloader  -->
+      <div id="preloader">
+         <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+         </div>
+      </div>
+      <!-- /Preloader ends -->
+      <div id="page-width">
+         <!-- Navbar -->
+          {% include "public/nav.html" %}
+         <!-- /nav -->
+         <!-- Home Page -->
+         <div id="main" class="home">
+            {% include "public/slider.html" %}
+
+             <section id="about" class="container-fluid">
+               <!-- Parallax object -->
+               <div class="parallax-object1 hidden-sm hidden-xs" data-0="opacity:1;"  data-100="transform:translatey(40%);"  data-center-center="transform:translatey(-60%);">
+                  <img src="img/girl1ornament.png" alt="">
+               </div>
+               <div class="section-heading">
+                  <h1>فريق العمل</h1>
+                  <!-- divider -->
+                  <div class="hr"></div>
+               </div>
+               <div class="container">
+                        Content
+               </div>
+            </section>
+
+
+
+
+         </div>
+         <!-- /main-->
+         <!-- Newsletter -->
+
+         <!-- /Section ends -->
+ {% include "public/footer.html" %}
+    </body>
+</html>

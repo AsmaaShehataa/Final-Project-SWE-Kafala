@@ -1,0 +1,17 @@
+	#page-width {
+								max-width:1200px;
+								margin:0 auto;
+								box-shadow: 10px 10px 100px -19px rgba(0,0,0,0.75);
+								background:#fff;
+							}
+							#page-width .nav,
+							#page-width .navbar-custom,
+							#page-width #nav,
+							#curveDownColor1,
+							#cloud1,
+							#cloud2,
+							#page-width .footer,
+							#page-width #newsletter{
+								max-width:1200px;
+								margin:0 auto;
+							}

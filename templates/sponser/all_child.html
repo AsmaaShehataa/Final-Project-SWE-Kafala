@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "public/header.html" %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Start Switcher -->
+
+<!-- end demo_changer -->
+<!-- Preloader  -->
+<div id="preloader">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- /Preloader ends -->
+<div id="page-width">
+    <!-- Navbar -->
+    {% include "public/nav.html" %}
+    <!-- /nav -->
+    <!-- Home Page -->
+    <div id="main" class="home">
+        {% include "public/slider.html" %}
+
+        <section id="gallery" class="container-fluid bg-color1">
+            <!-- Section heading -->
+            <div class="section-heading">
+                <h2 class="text-light">الاطفال</h2>
+                <!-- divider -->
+                <div class="hr light"></div>
+            </div>
+            <!-- Navigation -->
+            <div class="text-center">
+                <ul class="nav nav-pills category text-center" role="tablist" id="gallerytab">
+                    <li><a href="#" data-toggle="tab" data-filter=".facilities">التبني الخارجي</a></li>
+                    <li><a href="#" data-toggle="tab" data-filter=".staff">التبني الداخلي</a></li>
+                    <li class="active"><a href="#" data-toggle="tab" data-filter="*">الكل</a></li>
+                </ul>
+            </div>
+            <!-- Gallery -->
+            <div class="polaroids margin1">
+                <div id="lightbox" style="position: relative; overflow: hidden; height: 712px;" class="isotope">
+                    {% for field in childs_out %}
+                    <div class="facilities col-lg-3 col-md-6 col-sm-6 isotope-item"
+                         style="position: absolute; left: 0px; top: 0px; transform: translate3d(945px, 356px, 0px);">
+                        <div class="polaroid-item">
+                            <a href="{% url 'detials_child' field.id %}" >
+                                <img alt="" src="{{ field.image }}" class="img-responsive">
+                                <p>{{ field.name }}</p>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% for field in childs_in %}
+                    <div class="staff col-lg-3 col-md-6 col-sm-6 isotope-item"
+                         style="position: absolute; left: 0px; top: 0px; transform: translate3d(945px, 356px, 0px);">
+                        <div class="polaroid-item">
+                            <a href="{% url 'detials_child' field.id %}" >
+                                <img alt="" src="{{ field.image }}" class="img-responsive">
+                                <p>{{ field.name }}</p>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- /lightbox -->
+            </div>
+            <!-- /polaroids -->
+        </section>
+
+
+    </div>
+    <!-- /main-->
+    <!-- Newsletter -->
+
+    <!-- /Section ends -->
+    {% include "public/footer.html" %}
+</body>
+</html>

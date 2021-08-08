@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "public/header.html" %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Start Switcher -->
+
+<!-- end demo_changer -->
+<!-- Preloader  -->
+<div id="preloader">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- /Preloader ends -->
+<div id="page-width">
+    <!-- Navbar -->
+    {% include "public/nav.html" %}
+    <!-- /nav -->
+    <!-- Home Page -->
+    <div id="main" class="home">
+        {% include "public/slider.html" %}
+
+        <div class="container-fluid">
+            <!-- first row starts-->
+
+            <section id="services" class="container">
+                <div class="jumbo-heading">
+                    <!-- Heading -->
+                    <h1>{{ orphange.UserID.Name }}</h1>
+
+                </div>
+                <!-- Section heading -->
+
+                <h2>{{ orphange.Name}}</h2>
+
+                <blockquote>{{ orphange.Description}}</blockquote>
+                <div class="col-md-5">
+                    <img src="{{ orphange.UserID.UserProfile }} " class="img-responsive img-curved center-block" alt="">
+                </div>
+
+
+                <div class="bubble col-md-12 col-md-7 res-margin">
+                    <h5 style="direction:rtl">بيانات الدار :</h5>
+                     <p style="direction:rtl"><i class="glyph-icon flaticon-clip"></i> {{ orphange.Website}}</p>
+                    <p style="direction:rtl"><i class="glyph-icon flaticon-clip"></i> {{ orphange.PermissionNo}}</p>
+                    <p style="direction:rtl"><i class="glyph-icon flaticon-clip"></i> {{ orphange.CommercialNo}}</p>
+                    <p style="direction:rtl"><i class="glyph-icon flaticon-clip"></i> {{ orphange.StartDate}}</p>
+                </div>
+                <!-- /col-md-12-->
+
+                <!-- /services-slider -->
+            </section>
+
+
+            <section id="gallery" class="container-fluid bg-color1">
+                <!-- Section heading -->
+                <div class="section-heading">
+                    <h2 class="text-light">الاطفال</h2>
+                    <!-- divider -->
+                </div>
+                <!-- Navigation -->
+                <div class="text-center">
+                    <ul class="nav nav-pills category text-center" role="tablist" id="gallerytab">
+                        <li><a href="#" data-toggle="tab" data-filter=".facilities">تبني خارجي</a></li>
+                        <li><a href="#" data-toggle="tab" data-filter=".staff">تبني داخلي</a></li>
+                    </ul>
+                </div>
+                <!-- Gallery -->
+                <div class="polaroids margin1">
+                    <div id="lightbox" style="position: relative; overflow: hidden; height: 712px;" class="isotope">
+                     {% for field in childs_out %}
+                         <div class="facilities col-lg-3 col-md-6 col-sm-6 isotope-item"
+                             style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                            <div class="polaroid-item">
+                                <a href="{% url 'detials_child' field.id %}" >
+                                    <img alt="{{ field.image }}" src="{{ field.image }}" class="img-responsive">
+                                    <p>{{ field.name }}</p>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    {% for field in childs_in %}
+                         <div class="staff col-lg-3 col-md-6 col-sm-6 isotope-item"
+                             style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                            <div class="polaroid-item">
+                                <a href="{% url 'detials_child' field.id %}">
+                                    <img alt="{{ field.image }}" src="{{ field.image }}" class="img-responsive">
+                                    <p>{{ field.name }}</p>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    </div>
+                    <!-- /lightbox -->
+                </div>
+                <!-- /polaroids -->
+            </section>
+
+            <svg id="curveDownColor1" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                 height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 0 C 50 100 80 100 100 0 Z"></path>
+            </svg>
+
+        </div>
+        <!-- /main-->
+        <!-- Newsletter -->
+
+        <!-- /Section ends -->
+        {% include "public/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+<nav class="navbar navbar-custom navbar-fixed-top" id="navbar-custom">
+    <div class="container">
+        <!-- Logo and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand">
+                <i class="fa fa-bars"></i>
+            </button>
+            <!-- Logo -->
+            <div class="navbar-brand page-scroll">
+                <a href="#page-top"><img src="{% static 'img/logo_light.png' %}" class="img-responsive" alt=""></a>
+            </div>
+        </div>
+        <!-- /.navbar-header -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-brand">
+            <ul class="nav navbar-nav page-scroll navbar-left">
+                <li><a href="{% url 'contact_us' %}">تواصل معنا</a></li>
+                <li><a href="{% url 'about' %}">من نحن</a></li>
+                <li><a href="{% url 'team_work' %}">فريق العمل</a></li>
+                   <li><a href="{% url 'sponser_login' %}">دخول الكفيل</a></li>
+
+                <li><a href="{% url 'all_child' %}">الاطفال</a></li>
+                <li class="active dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">دار الايتام<b class="caret"></b></a>
+                    <ul class="dropdown-menu" style="display: none;">
+                        <li><a href="{% url 'login_orphange' %}">تسجيل الدخول دار الايتام</a></li>
+                        <li><a href="{% url 'all_orphange' %}"> دار الايتام</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'home_index' %}">الرئيسية</a></li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /container -->
+</nav>

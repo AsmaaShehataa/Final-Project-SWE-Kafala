@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "public/header.html" %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Start Switcher -->
+
+<!-- end demo_changer -->
+<!-- Preloader  -->
+<div id="preloader">
+  <div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+</div>
+<!-- /Preloader ends -->
+<div id="page-width">
+  <!-- Navbar -->
+  {% include "public/nav.html" %}
+  <!-- /nav -->
+  <!-- Home Page -->
+  <div id="main" class="home">
+    <!-- Slider -->
+
+    <div class="container-fluid">
+      <div class="jumbotron"></div>
+      <!-- /jumbotron-->
+      <div class="jumbo-heading">
+        <!-- Heading -->
+        <h1>اهلا بك </h1>
+        <!-- Breadcrumb -->
+
+      </div>
+      <!-- /jumbo-heading -->
+      <!-- Blog page -->
+      <div class="container">
+        <div id="blog-container" class="col-md-9">
+          <div class="blog-post post-main">
+            <div class="page-header text-center">
+              <h4 class="glyph-icon flaticon-book text-right">بيانات الطلب رقم  {{ array_request.RequestID }}</h4>
+
+            </div>
+            <h6 class="glyph-icon  text-right">بيانات  الطلب {{ array_request.RequestID}}</h6>
+            <div class="alert alert-warning">
+              <ul class="pricing-content">
+                <li> تاريخ الطلب : {{ array_request.RequestDate}}</li>
+                <li> تاريخ المرفقات : <a href="{{ array_request.RequestFileUpload.url}}">عرض </a></li>
+                <li>حالة الطلب  : {{ array_request.RequestTypeID.RequestTypeName }} </li>
+                <li> نتيجة الطلب :  {{ array_request.RequestStatusID.RequestStatusName }}</li>
+
+
+
+              </ul>
+            </div>
+
+
+            <h6 class="glyph-icon  text-right">بيانات  دار الايتام {{ array_request.OrphanageID.UserID.Name}}</h6>
+            <hr/>
+            <div class="alert alert-warning">
+              <ul class="pricing-content">
+                <li> المنطقة : {{ array_request.OrphanageID.UserID.UserArea }} </li>
+                <li> الشارع : {{ array_request.OrphanageID.UserID.UserStreet }} </li>
+                <li> البلد : {{ array_request.OrphanageID.UserID.UserCountryID.Name }} </li>
+                 <li> المحافظة : {{ array_request.OrphanageID.UserID.UserCityID.Name }} </li>
+              </ul>
+            </div>
+              <h6 class="glyph-icon  text-right">بيانات الطفل <b>{{ array_request.ChildID.RealName}}</b></h6>
+               <hr/>
+            <div class="alert alert-warning">
+              <ul class="pricing-content">
+                 <li>تاريخ الميلاد  : {{ array_request.ChildID.BirthDate}}</li>
+                  <li>الرقم القومي : {{ array_request.ChildID.NationalID}}</li>
+                            <li>حلم الطفل : {{ array_request.ChildID.HisDream}}</li>
+                            <li> تكلفة التبني الشهرية : {{ array_request.ChildID.CostPrice}}</li>
+                            <li> نوع التبني : {{ array_request.ChildID.AdoptionTypeID}}</li>
+                            <li> الحالة الصحية : {{ array_request.ChildID.CaseHistory}}</li>
+                            <li> نوع التبني : {{ array_request.ChildID.AdoptionTypeID}}</li>
+                            <li> وصف الحالة الصحية : {{ array_request.ChildID.HealthStatus}}</li>
+              </ul>
+            </div>
+
+
+
+
+
+          </div>
+          <!-- /comments block -->
+        </div>
+        <!-- /blog-container -->
+        <!-- Sidebar Starts -->
+        {% include "Sponser/menu.html" %}
+        <!-- /well -->
+      </div>
+      <!-- /sidebar ends -->
+    </div>
+
+
+    <!-- /Section ends -->
+    {% include "public/footer.html" %}
+</body>
+</html>

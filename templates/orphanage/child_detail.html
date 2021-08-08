@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "public/header.html" %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Start Switcher -->
+
+<!-- end demo_changer -->
+<!-- Preloader  -->
+<div id="preloader">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- /Preloader ends -->
+<div id="page-width">
+    <!-- Navbar -->
+    {% include "public/nav.html" %}
+    <!-- /nav -->
+    <!-- Home Page -->
+    <div id="main" class="home">
+        <!-- Slider -->
+
+        <div class="container-fluid">
+            <div class="jumbotron"></div>
+            <!-- /jumbotron-->
+            <div class="jumbo-heading">
+                <!-- Heading -->
+                <h1>اهلا بك </h1>
+                <!-- Breadcrumb -->
+
+            </div>
+            <!-- /jumbo-heading -->
+            <!-- Blog page -->
+            <div class="container">
+                <div id="blog-container" class="col-md-9">
+                    <div class="blog-post post-main">
+                        <div class="page-header text-center">
+                            <h4 class="glyph-icon flaticon-book-1 text-right">عرض بيانات الطفل </h4>
+
+                        </div>
+                        <div class="comment media text-right">
+                            <div class="media-body">
+                                <a href="#">
+                                    <h6 class="media-heading">الاسم : {{ child.RealName}}
+                                        <small> {{ child.BirthDate}} تاريخ الميلاد : </small>
+                                    </h6>
+                                </a>
+                                <h6 class="media-heading">الرقم القومي : {{ child.NationalID}} </h6>
+                                <h6 class="media-heading"> حلم الطفل : {{ child.HisDream}} </h6>
+                                <h6 class="media-heading"> تكلفة التبني الشهرية : {{ child.CostPrice}} </h6>
+                                <h6 class="media-heading"> نوع التبني : {{ child.AdoptionTypeID}} </h6>
+                                <h6 class="media-heading"> الحالة الصحية : {{ child.CaseHistory}} </h6>
+                                <h6 class="media-heading"> وصف الحالة الصحية : {{ child.HealthStatus}} </h6>
+                                <!-- Reply Button -->
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="comment media text-right">
+
+
+                            <div class="media-body">
+                                <h6 class="media-heading"> صور الطفل </h6>
+                                <!-- Reply Button -->
+                                <form method="post" action="#" enctype="multipart/form-data">
+
+                                    {% csrf_token %}
+
+                                    {{ form.as_p }}
+
+                                    <input type="submit" class="btn center-block" value="ادخال بيانات الطفل">
+                                </form>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!-- /comments block -->
+                </div>
+                <!-- /blog-container -->
+                <!-- Sidebar Starts -->
+                {% include "orphanage/menu.html" %}
+                <!-- /well -->
+            </div>
+            <!-- /sidebar ends -->
+        </div>
+
+
+        <!-- /Section ends -->
+        {% include "public/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ {% include "public/header.html" %}
+   <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <!-- Start Switcher -->
+
+      <!-- end demo_changer -->
+      <!-- Preloader  -->
+      <div id="preloader">
+         <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+         </div>
+      </div>
+      <!-- /Preloader ends -->
+      <div id="page-width">
+         <!-- Navbar -->
+          {% include "public/nav.html" %}
+         <!-- /nav -->
+         <!-- Home Page -->
+         <div id="main" class="home">
+            {% include "public/slider.html" %}
+
+             <section id="about" class="container-fluid">
+               <!-- Parallax object -->
+               <div class="parallax-object1 hidden-sm hidden-xs" data-0="opacity:1;"
+                  data-100="transform:translatey(40%);"
+                  data-center-center="transform:translatey(-60%);">
+                  <!-- Image -->
+                  <img src="img/girl1ornament.png" alt="">
+               </div>
+               <!-- Section heading -->
+               <div class="section-heading">
+                  <h1>من نحن </h1>
+                  <!-- divider -->
+
+               </div>
+               <div class="container">
+<div class="blog-post row">
+                        <div class="img-date">
+                           <!-- date and category -->
+
+                           <!-- blog image -->
+                           <div class="img-blog">
+                              <a href="blog-single.html">
+                              <img class="img-responsive" src="img/blog3.jpg" alt="">
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col-md-12">
+                           <!-- Post header -->
+                           <h3>
+                              <a href="blog-single.html">نحن فريق عمل كفالة</a>
+                           </h3>
+
+                           <!-- Post Excerpt -->
+                           <p>نحن فريق مك،نه من ٧ اشخاص اتت الفكرة من خلال المهندسة نور الهدي التي كانت تسعي الي فكرة تفيد المجتمع من خلال مشروع تخرج يمكن تنفيذه علي ارض الواقع </p>
+                           <p>محور الفكرة يتركز علي عمل موقع الكتروني لكفالة و ادراة دار الايتام المختلفة الموجودة في انحاء جمهورية مصر العربية و بعد عرض الفكرة علي استاذنا الدكتور عاطف رسلان رحب بالفكرة و تمت الفكوه من خلال توجهاته </p>
+
+                        </div>
+                     </div>
+                  <!-- /team carousel ends -->
+               </div>
+               <!-- /container -->
+            </section>
+
+
+
+
+         </div>
+         <!-- /main-->
+         <!-- Newsletter -->
+
+         <!-- /Section ends -->
+ {% include "public/footer.html" %}
+    </body>
+</html>

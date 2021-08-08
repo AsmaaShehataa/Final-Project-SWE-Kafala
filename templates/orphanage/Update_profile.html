@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "public/header.html" %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Start Switcher -->
+
+<!-- end demo_changer -->
+<!-- Preloader  -->
+<div id="preloader">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- /Preloader ends -->
+<div id="page-width">
+    <!-- Navbar -->
+    {% include "public/nav.html" %}
+    <!-- /nav -->
+    <!-- Home Page -->
+    <div id="main" class="home">
+        <!-- Slider -->
+
+        <div class="container-fluid">
+            <div class="jumbotron"></div>
+            <!-- /jumbotron-->
+            <div class="jumbo-heading">
+                <!-- Heading -->
+                <h1>اهلا بك </h1>
+                <!-- Breadcrumb -->
+
+            </div>
+            <!-- /jumbo-heading -->
+            <!-- Blog page -->
+            <div class="container">
+                <div id="blog-container" class="col-md-9">
+                    <div class="blog-post post-main">
+                        <div class="page-header text-center">
+                            <h4 class="text-right">تعديل بيانات الملف الشخصي</h4>
+
+                        </div>
+                        <div class="col-lg-12">
+                            {% if messages %}
+
+                            {% for message in messages %}
+
+                            <div class="alert alert-success">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                <strong>{{ message }}</strong>
+                            </div>
+
+                            {% endfor %}
+
+                            {% endif %}
+                            <form action="" method="post">
+                                {% csrf_token %}
+
+                                {{ form.as_p }}
+
+                                <input type="submit" class="btn center-block" value="تعديل">
+                            </form><br/>
+
+                        </div>
+
+
+                    </div>
+                    <!-- /comments block -->
+                </div>
+                <!-- /blog-container -->
+                <!-- Sidebar Starts -->
+                {% include "orphanage/menu.html" %}
+                <!-- /well -->
+            </div>
+            <!-- /sidebar ends -->
+        </div>
+
+
+        <!-- /Section ends -->
+        {% include "public/footer.html" %}
+</body>
+</html>

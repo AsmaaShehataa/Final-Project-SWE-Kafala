@@ -1,0 +1,50 @@
+{% load static %}
+<div class="sidebar col-md-3">
+    <!-- Accordion -->
+    <div class="well">
+        <h4 class="sidebar-header">القائمة</h4>
+        <!-- Accordion -->
+        <div class="panel-group" id="accordion">
+            <!-- Panel 1 -->
+            <div class="panel">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">الاطفال</a>
+                    </h5>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="{% url 'view_sponser_child' %}">عرض الكل</a></li>
+                            <li><a href="{% url 'view_all_request' %}">عرض الطلبات</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Panel 3 -->
+            <div class="panel">
+                <div class="panel-heading">
+                    <h5 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
+                           href="#collapse3">اخري</a>
+                    </h5>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <li><a href="{% url 'update_profile' %}">تعديل الملف الشخصي</a></li>
+                        <li><a href="{% url 'logout' %}">الخروج </a></li>
+                    </div>
+                </div>
+            </div>
+            <!--/panel -->
+
+
+        </div>
+        <!--/panel -->
+    </div>
+    <!-- /.accordion -->
+</div>

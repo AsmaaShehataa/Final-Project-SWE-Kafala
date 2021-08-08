@@ -1,0 +1,72 @@
+{% load static %}
+<section id="services" class="container">
+               <!-- Section heading -->
+               <div class="section-heading">
+                  <h2> كفالة</h2>
+                  <!-- divider -->
+                  <div class="hr"></div>
+               </div>
+               <div class="col-md-5">
+                  <img src="{% static 'img/services.jpg' %}" class="img-responsive img-curved center-block" alt=""/>
+               </div>
+               <!-- main text -->
+               <div class="col-md-12 col-md-7 res-margin">
+                  <h3>فضل كفالة اليتيم</h3>
+                  <p>ينال كافل اليتيم فضلاً عظيماً وبركةً وخيراً في الدنيا قبل الآخرة، وفيما يأتي ذكر بعض تلك الفضائل:</p>
+                  <!-- Custom List -->
+                  <ul class="custom no-margin">
+                     <li>مصاحبة النبي صلى الله عليه وسلم: فكافل اليتيم ينال شرف مصاحبة الرسول في الجنة؛ لقوله عليه الصلاة والسلام: (وَأنا وكافِلُ اليَتِيمِ في الجَنَّةِ هَكَذا وأَشارَ بالسَّبَّابَةِ والوُسْطَى، وفَرَّجَ بيْنَهُما شيئًا)،[٣] وبيّن الإمام الحافظ ابن حجر بأنّ الجدير بالمسلم العمل بما نصّ عليه الحديث السابق لينال شرف صحبة النبي -عليه السلام- في الجنة التي لا تعادلها أي منزلةٍ أو مكانةٍ، كما يدل الحديث على التفاوت البسيط بين الرسول وبين كافل اليتم في منازل الآخرة.
+
+                     </li>
+                     <li>لحصول على أجر الصدقة والصلة: فكافل اليتيم يحصل على أجر الصدقة والصلة إن كان هذا اليتيم قريباً له.</li>
+<li>بناء مجتمعٍ سليمٍ: حيث تدل كفالة اليتيم على الفطرة السليمة والطبع النقي لدى الكافل، كما تعمل على نشر روح المحبة والود وبناء مجتمعٍ سليمٍ خالٍ من الحقد والكراهية.</li>
+                     <li>بناء مجتمعٍ سليمٍ: حيث تدل كفالة اليتيم على الفطرة السليمة والطبع النقي لدى الكافل، كما تعمل على نشر روح المحبة والود وبناء مجتمعٍ سليمٍ خالٍ من الحقد والكراهية.</li>
+                     <li>ترقيق القلب: فكفالة اليتيم من أسباب تحقيق رقة القلب وإزالة القسوة منه.</li>
+                     <li>البركة وزيادة الرزق: فينال كافل اليتيم البركة في حياته والزيادة في رزقه.</li>
+                  </ul>
+               </div>
+               <!-- /col-md-12-->
+               <!-- Services Boxes -->
+
+               <div id="services-slider" class="owl-carousel margin1 col-lg-12">
+
+{% for field in orphange %}
+                  <!-- service box -->
+
+                   {% if forloop.counter  == 1 %}
+                     <div class="serviceBox bg-color1" id="orphange">
+                     <!-- service image-->
+
+                     <img src="{{ field.UserID.UserProfile }}" class="img-responsive img-circle" alt=""/>
+                     <!-- service content -->
+                     <div class="service-content text-light">
+                        <h4 class="title">{{ field.UserID.Name }}</h4>
+                        <p class="description">
+                      {{ field.Description|slice:":100" }}
+
+                            </p>
+                     </div>
+                  </div>
+                   {% endif %}
+                    {% if forloop.counter  > 1 %}
+                  <!-- /col-md-6 col-lg-3 -->
+                  <!-- service box -->
+                  <div class="serviceBox bg-color2">
+                     <!-- service image-->
+                     <img src="{{ field.UserID.UserProfile }}" class="img-responsive img-circle" alt=""/>
+                     <!-- service content -->
+                     <div class="service-content text-light">
+                        <h4 class="title">{{ field.UserID.Name }}</h4>
+                        <p class="description">
+{{ field.Description|slice:":100" }}
+                        </p>
+                     </div>
+                  </div>
+                      {% endif %}
+                  <!-- /service box -->
+
+       {% endfor %}
+                  <!-- /service box -->
+               </div>
+               <!-- /services-slider -->
+            </section>

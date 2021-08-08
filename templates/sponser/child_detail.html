@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "public/header.html" %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Start Switcher -->
+
+<!-- end demo_changer -->
+<!-- Preloader  -->
+<div id="preloader">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- /Preloader ends -->
+<div id="page-width">
+    <!-- Navbar -->
+    {% include "public/nav.html" %}
+    <!-- /nav -->
+    <!-- Home Page -->
+    <div id="main" class="home">
+        {% include "public/slider.html" %}
+
+        <section id="tuition" class="container-fluid">
+            <!-- Section heading -->
+            <div class="section-heading">
+                <h2> الطفل {{ child.RealName}}</h2>
+                <!-- divider -->
+                <div class="hr"></div>
+            </div>
+            <div class="container">
+
+                <div class="col-md">
+
+                    <div class="pricingTable">
+                        <div id="lightbox" style="position: relative; overflow: hidden; height: 712px;" class="isotope">
+                            {% for field in image %}
+                            <div class="staff col-lg-3 col-md-6 col-sm-6 isotope-item"
+                                 style="position: absolute; left: 0px; top: 0px; transform: translate3d(945px, 356px, 0px);">
+                                <div class="polaroid-item">
+                                    <a href="{{ field.ChildImage.url }}" data-gal="prettyPhoto[gallery]">
+                                        <img alt="" src="{{ field.ChildImage.url }}" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <ul class="pricing-content">
+                            <li>الرقم القومي : {{ child.NationalID}}</li>
+                            <li>حلم الطفل : {{ child.HisDream}}</li>
+                            <li> تكلفة التبني الشهرية : {{ child.CostPrice}}</li>
+                            <li> نوع التبني : {{ child.AdoptionTypeID}}</li>
+                            <li> الحالة الصحية : {{ child.CaseHistory}}</li>
+                            <li> نوع التبني : {{ child.AdoptionTypeID}}</li>
+                            <li> وصف الحالة الصحية : {{ child.HealthStatus}}</li>
+
+                        </ul>
+                        <!-- /ul -->
+                        <!-- button -->
+
+
+                        <a href="{% url 'make_request' %}?child_id={{ child.ChildID }}&&orphnage={{ child.OrphanageID.OrphanageID }}" class="btn">طلب كفالة الطفل</a>
+                    </div>
+                    <!-- /pricingTable -->
+                </div>
+            </div>
+            <!--/container -->
+        </section>
+
+
+    </div>
+    <!-- /main-->
+    <!-- Newsletter -->
+
+    <!-- /Section ends -->
+    {% include "public/footer.html" %}
+</body>
+</html>

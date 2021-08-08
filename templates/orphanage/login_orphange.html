@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "public/header.html" %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Start Switcher -->
+
+<!-- end demo_changer -->
+<!-- Preloader  -->
+<div id="preloader">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- /Preloader ends -->
+<div id="page-width">
+    <!-- Navbar -->
+    {% include "public/nav.html" %}
+    <!-- /nav -->
+    <!-- Home Page -->
+    <div id="main" class="home">
+        {% include "public/slider.html" %}
+
+        <section id="about" class="container-fluid">
+            <!-- Parallax object -->
+            <div class="parallax-object1 hidden-sm hidden-xs" data-0="opacity:1;"
+                 data-100="transform:translatey(40%);"
+                 data-center-center="transform:translatey(-60%);">
+                <!-- Image -->
+                <img src="img/girl1ornament.png" alt="">
+            </div>
+            <!-- Section heading -->
+            <div class="section-heading">
+                <h1>تسجيل الدخول دار الايتام</h1>
+            </div>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Typography -->
+     {% if messages %}
+
+                                                {% for message in messages %}
+
+                                                <div class="alert alert-success">
+                                                    <a href="#" class="close" data-dismiss="alert"
+                                                       aria-label="close">×</a>
+                                                    <strong>{{ message }}</strong>
+                                                </div>
+
+                                                {% endfor %}
+
+                                                {% endif %}
+                        <div class="row">
+                            <div class="panel-group" id="accordion">
+                                <!-- Question 1 -->
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse"
+                                               data-parent="#accordion" href="#collapse1" aria-expanded="false"> تسجيل
+                                                الدخول</a>
+                                        </h6>
+                                    </div>
+
+                                    <!-- /panel-heading -->
+                                    <div id="collapse1" class="panel-collapse collapse" aria-expanded="false"
+                                         style="height: 0px;">
+                                        <div class="panel-body">
+                                            <p>أدخل بريدك الإلكتروني و كلمة السر الخاصة بحسابك :</p>
+                                            <div id="contact_form">
+                                                 <form action="" method="post">
+                                                    {% csrf_token %}
+
+                                                    {{ LoginForm.as_p }}
+
+                                            <button type="submit"  value="Submit" class="btn center-block"  name="Login_Form">دخول
+                                            </button>
+                                            </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/panel -->
+                                <!-- Question 2 -->
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse"
+                                               data-parent="#accordion" href="#collapse2" aria-expanded="false">
+                                                ليس لديك حساب؟</a>
+                                        </h6>
+                                    </div>
+                                    <!-- /panel-heading -->
+                                    <div id="collapse2" class="panel-collapse collapse" aria-expanded="false"
+                                         style="height: 0px;">
+                                        <div class="panel-body">
+                                            <h4>إنشاء حساب</h4>
+                                            <p>إنشاء حساب في أقل من دقيقة:</p>
+                                            <div class="form-group">
+
+                                                <form action="" method="post" >
+                                                    {% csrf_token %}
+
+                                                    {{ form.as_p }}
+
+
+
+                                            <button type="submit"  value="Submit" class="btn center-block" name="Register_Form">أرسل
+                                            </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/panel -->
+
+                        </div>
+                    </div>
+                    <!-- /row-->
+                </div>
+            </div>
+            <!-- /container -->
+        </section>
+
+
+    </div>
+    <!-- /main-->
+    <!-- Newsletter -->
+
+    <!-- /Section ends -->
+    {% include "public/footer.html" %}
+</body>
+</html>

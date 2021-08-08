@@ -1,0 +1,30 @@
+{% load static %}
+<section id="gallery" class="container-fluid bg-color1">
+               <!-- Section heading -->
+               <div class="section-heading">
+                  <h2 class="text-light">الاطفال</h2>
+                  <!-- divider -->
+                  <div class="hr light"></div>
+               </div>
+               <!-- Navigation -->
+
+               <!-- Gallery -->
+               <div class="polaroids margin1">
+                  <div id="lightbox" style="position: relative; overflow: hidden; height: 712px;" class="isotope">
+                     <!-- image1 -->
+                     {% for field in childs %}
+                      {{MEDIA_URL}}
+                     <div class="facilities col-lg-3 col-md-6 col-sm-6 isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                        <div class="polaroid-item">
+                           <a href="{{field.ChildImage.url}}" data-gal="prettyPhoto[gallery]">
+                              <img alt="" src="{{field.ChildImage.url}}" class="img-responsive">
+                              <p>{{ MEDIA_URL }}</p>
+                           </a>
+                        </div>
+                     </div>
+{% endfor %}
+                  </div>
+                  <!-- /lightbox -->
+               </div>
+               <!-- /polaroids -->
+            </section>

@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "public/header.html" %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Start Switcher -->
+
+<!-- end demo_changer -->
+<!-- Preloader  -->
+<div id="preloader">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- /Preloader ends -->
+<div id="page-width">
+    <!-- Navbar -->
+    {% include "public/nav.html" %}
+    <!-- /nav -->
+    <!-- Home Page -->
+    <div id="main" class="home">
+        <!-- Slider -->
+
+        <div class="container-fluid">
+            <div class="jumbotron"></div>
+            <!-- /jumbotron-->
+            <div class="jumbo-heading">
+                <!-- Heading -->
+                <h1>اهلا بك </h1>
+                <!-- Breadcrumb -->
+
+            </div>
+            <!-- /jumbo-heading -->
+            <!-- Blog page -->
+            <div class="container">
+                <div id="blog-container" class="col-md-9">
+                    <div class="blog-post post-main">
+                        <div class="page-header text-center">
+                            <h4 class="glyph-icon flaticon-people text-right">عرض بيانات كل الاطفال</h4>
+
+                        </div>
+
+                          <a class="btn btn-success btn-sm glyph-icon flaticon-people" href="{% url 'add_new_child' %}">اضافة طفل جديد</a>
+
+<div class="alert alert-info">
+                                عدد الاطفال مسجلة في دار الايتام هي {{ count }} طفل
+                                 </div>
+<script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>
+                        <table class="table" id="table_id">
+                            <thead>
+                            <tr>
+                                <th>العمليات</th>
+                                <th>تاريخ الميلاد</th>
+                                <th>الرقم القومي</th>
+                                <th>الاسم</th>
+                                <th>المسلسل</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+{% for field in childs %}
+                  <tr>
+                                <td>
+
+                                    <ul class="nav nav-pills">
+
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                               aria-expanded="false">العمليات <b class="caret"></b></a>
+                                            <ul class="dropdown-menu" style="display: none;">
+                                                <li><a href="{% url 'child_details' field.ChildID %}">عرض البيانات</a></li>
+                                                <li><a href="{% url 'update_child' field.ChildID %}">تعديل </a></li>
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </td>
+                                <td>{{ field.BirthDate }}</td>
+                                <td>{{ field.NationalID }}</td>
+                                <td>{{ field.RealName }}</td>
+                                <td> {{ forloop.counter }}</td>
+                            </tr>
+
+{% endfor %}
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <!-- /comments block -->
+                </div>
+                <!-- /blog-container -->
+                <!-- Sidebar Starts -->
+                {% include "orphanage/menu.html" %}
+                <!-- /well -->
+            </div>
+            <!-- /sidebar ends -->
+        </div>
+
+
+        <!-- /Section ends -->
+        {% include "public/footer.html" %}
+</body>
+</html>

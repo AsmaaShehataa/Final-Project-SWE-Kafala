@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ {% include "public/header.html" %}
+   <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <!-- Start Switcher -->
+
+      <!-- end demo_changer -->
+      <!-- Preloader  -->
+      <div id="preloader">
+         <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+         </div>
+      </div>
+      <!-- /Preloader ends -->
+      <div id="page-width">
+         <!-- Navbar -->
+          {% include "public/nav.html" %}
+         <!-- /nav -->
+         <!-- Home Page -->
+         <div id="main" class="home">
+		 <!-- Slider -->
+      <div id="layerslider">
+
+
+         <!-- Slide 1 -->
+         <div class="ls-slide" data-ls="transition2d:48;timeshift:-2000;">
+            <!-- Background image -->
+            <img src="{% static 'img/slide1.jpg' %}" class="ls-bg"  alt="Slide background"/>
+            <!-- Text -->
+            <div class="ls-l header-text" data-ls="offsetxin:0;durationin:2000;delayin:200;easingin:easeInOutExpo;rotatexin:100;scalexin:0.8;scaleyin:0.8;transformoriginin:50% 50% -150;offsetxout:0;durationout:500;rotatexout:-20;scalexout:0.8;scaleyout:0.8;transformoriginout:50% 50% -150;">
+               <h1>Welcome to Little Ones</h1>
+               <p class="subtitle hidden-xs"> Little Ones is a Super Fun Daycare / Children HTML Template including many Elements </p>
+               <!-- Button -->
+               <div class="page-scroll hidden-xs">
+                  <a class="btn" href="#contact">Contact us</a>
+               </div>
+            </div>
+         </div>
+
+         <!-- Slide 2 -->
+         <div class="ls-slide" data-ls="transition2d:48;timeshift:-2000;">
+            <!-- Background image -->
+            <img src="img/slide2.jpg" class="ls-bg"  alt="Slide background"/>
+            <!-- Text -->
+            <div class="ls-l header-text"   data-ls="offsetxin:0;durationin:2000;delayin:200;easingin:easeInOutExpo;rotatexin:100;scalexin:0.8;scaleyin:0.8;transformoriginin:50% 50% -150;offsetxout:0;durationout:500;rotatexout:-20;scalexout:0.8;scaleyout:0.8;transformoriginout:50% 50% -150;">
+               <h1>Colorful & Fun Template</h1>
+               <p class="subtitle hidden-xs"> Little Ones is a Super Fun Daycare / Children HTML Template including many Elements </p>
+               <!-- Button -->
+               <div class="page-scroll hidden-xs">
+                  <a class="btn" href="#contact">Contact us</a>
+               </div>
+            </div>
+         </div>
+
+         <!-- Slide 3 -->
+         <div class="ls-slide" data-ls="transition2d:48;timeshift:-2000;">
+            <!-- Background image -->
+            <img src="img/slide3.jpg" class="ls-bg"  alt="Slide background"/>
+            <!-- Text -->
+            <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:200;easingin:easeInOutExpo;rotatexin:100;scalexin:0.8;scaleyin:0.8;transformoriginin:50% 50% -150;offsetxout:0;durationout:500;rotatexout:-20;scalexout:0.8;scaleyout:0.8;transformoriginout:50% 50% -150;">
+               <h1>Quality daycare</h1>
+               <p class="subtitle hidden-xs"> Little Ones is a Super Fun Daycare / Children HTML Template including many Elements </p>
+               <!-- Button -->
+               <div class="page-scroll hidden-xs">
+                  <a class="btn" href="#contact">Contact us</a>
+               </div>
+            </div>
+         </div>
+		        <!-- Slide 3 -->
+         <div class="ls-slide" data-ls="transition2d:48;timeshift:-2000;">
+            <!-- Background image -->
+            <img src="img/slide4.jpg" class="ls-bg"  alt="Slide background"/>
+            <!-- Text -->
+            <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:200;easingin:easeInOutExpo;rotatexin:100;scalexin:0.8;scaleyin:0.8;transformoriginin:50% 50% -150;offsetxout:0;durationout:500;rotatexout:-20;scalexout:0.8;scaleyout:0.8;transformoriginout:50% 50% -150;">
+               <h1>Contact us Today</h1>
+               <p class="subtitle hidden-xs"> Little Ones is a Super Fun Daycare / Children HTML Template including many Elements </p>
+               <!-- Button -->
+               <div class="page-scroll hidden-xs">
+                  <a class="btn" href="#contact">Contact us</a>
+               </div>
+            </div>
+         </div>
+
+      </div>
+    <div class="container-fluid">
+                  <div class="jumbotron"></div>
+                  <!-- /jumbotron-->
+                  <div class="jumbo-heading">
+                     <!-- Heading -->
+                     <h1>اهلا بك </h1>
+                     <!-- Breadcrumb -->
+                     <ul class="breadcrumb">
+                        <li><a href="index.html">Home</a> <span class="divider"></span></li>
+                        <li><a href="blog.html">Blog Home</a> <span class="divider"></span></li>
+                        <li class="active">Blog Post</li>
+                     </ul>
+                  </div>
+                  <!-- /jumbo-heading -->
+                  <!-- Blog page -->
+				  <div class="container">
+                  <div id="blog-container" class="col-md-9">
+                     <div class="blog-post post-main">
+                        <img class="img-responsive center-block" src="img/blogmain1.jpg" alt="">
+                     </div>
+                     <!-- /comments block -->
+                  </div>
+                  <!-- /blog-container -->
+                  <!-- Sidebar Starts -->
+                  <div class="sidebar col-md-3">
+                     <!-- Accordion -->
+                     <div class="well">
+                        <h4 class="sidebar-header">القائمة</h4>
+                        <!-- Accordion -->
+                        <div class="panel-group" id="accordion">
+                           <!-- Panel 1 -->
+                           <div class="panel">
+                              <div class="panel-heading">
+                                 <h5 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">الاطفال</a>
+                                 </h5>
+                              </div>
+                              <div id="collapse1" class="panel-collapse collapse in">
+                                 <div class="panel-body">
+                                   <a href="index.html#team">عرض الكل</a><br>
+                                 </div>
+
+                              </div>
+                           </div>
+                           <!--/panel -->
+                           <!-- Panel 2 -->
+                           <div class="panel">
+                              <div class="panel-heading">
+                                 <h5 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">بيانات الكفلاء</a>
+                                 </h5>
+                              </div>
+                              <div id="collapse2" class="panel-collapse collapse">
+                                 <div class="panel-body">
+                                   <a href="index.html#team">عرض الكل</a><br>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--/panel -->
+                           <!-- Panel 3 -->
+                           <div class="panel">
+                              <div class="panel-heading">
+                                 <h5 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">الطلبات</a>
+                                 </h5>
+                              </div>
+                              <div id="collapse3" class="panel-collapse collapse">
+                                 <div class="panel-body">
+                                     <li><a href="profile.html">تعديل الملف الشخصي</a></li>
+                                    <li><a href="index.html#team">الخروج </a></li>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--/panel -->
+
+
+
+                           </div>
+                           <!--/panel -->
+                        </div>
+                        <!-- /.accordion -->
+                     </div>
+                     <!-- /well -->
+                  </div>
+                  <!-- /sidebar ends -->
+				 </div>
+
+
+
+
+
+         <!-- /Section ends -->
+ {% include "public/footer.html" %}
+    </body>
+</html>
